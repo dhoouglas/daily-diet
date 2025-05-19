@@ -1,15 +1,15 @@
+import { useFonts } from "@expo-google-fonts/nunito";
 import { Home } from "@screens/Home";
-import { StyleSheet } from "react-native";
+import theme from "@theme/index";
+import { ActivityIndicator } from "react-native";
+import { ThemeProvider } from "styled-components";
 
 export default function App() {
-  return <Home />;
-}
+  const [isFontsLoaded] = useFonts(["Nunito_400Regular", "Nunito_700Bold"]);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+  return (
+    <ThemeProvider theme={theme}>
+      {!isFontsLoaded ? <Home /> : <ActivityIndicator />}
+    </ThemeProvider>
+  );
+}
