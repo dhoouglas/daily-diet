@@ -16,6 +16,14 @@ export function Percentage({
 }: PercentageProps) {
   const navigation = useNavigation();
 
+  if (Number(title) <= 50) {
+    type = "SECONDARY";
+  } else {
+    type = "PRIMARY";
+  }
+
+  console.log(title, type);
+
   function handleGoToStatistics() {
     navigation.navigate("statistics");
   }
@@ -24,7 +32,7 @@ export function Percentage({
     <Container {...rest} onPress={handleGoToStatistics}>
       <StatisticsIcon weight="bold" type={type} />
 
-      <Title>{title}</Title>
+      <Title>{title}%</Title>
 
       <Description>das refeições dentro da dieta</Description>
     </Container>
