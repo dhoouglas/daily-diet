@@ -16,7 +16,7 @@ export function Percentage({
 }: PercentageProps) {
   const navigation = useNavigation();
 
-  if (Number(title) <= 50) {
+  if (parseFloat(title) <= parseFloat("50,00")) {
     type = "SECONDARY";
   } else {
     type = "PRIMARY";
