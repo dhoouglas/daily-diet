@@ -1,12 +1,11 @@
 import { Header } from "@components/Header";
-import { Text } from "react-native";
 import { Container } from "./styles";
 import { Percentage } from "@components/Percentage";
-
-export function Home() {
+export function Statistics() {
   return (
     <Container>
-      <Header isLogoVisible isAvatarVisible />
+      <Header isBackButtonVisible />
+
       <Percentage title={"90,87%"} />
     </Container>
   );

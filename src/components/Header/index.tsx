@@ -4,6 +4,7 @@ import {
   AvatarContainer,
   BackButton,
   BackIcon,
+  ButtonIconTypeStyleProps,
   Container,
   Logo,
 } from "./styles";
@@ -15,12 +16,14 @@ type BackButtonProps = {
   isBackButtonVisible?: boolean;
   isLogoVisible?: boolean;
   isAvatarVisible?: boolean;
+  type?: ButtonIconTypeStyleProps;
 };
 
 export function Header({
-  isBackButtonVisible,
-  isLogoVisible = true,
-  isAvatarVisible = true,
+  type = "PRIMARY",
+  isBackButtonVisible = false,
+  isLogoVisible = false,
+  isAvatarVisible = false,
 }: BackButtonProps) {
   const navigation = useNavigation();
 
@@ -32,7 +35,7 @@ export function Header({
     <Container>
       {isBackButtonVisible && (
         <BackButton onPress={handleGoBack}>
-          <BackIcon />
+          <BackIcon type={type} />
         </BackButton>
       )}
 
