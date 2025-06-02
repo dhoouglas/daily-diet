@@ -22,7 +22,7 @@ export function Percentage({
     type = "PRIMARY";
   }
 
-  console.log(title, type);
+  // console.log(title, type);
 
   function handleGoToStatistics() {
     navigation.navigate("statistics");
